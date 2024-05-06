@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import useFetchData from "@/hooks/useFetchData";
 import JobCards from "../JobCards";
@@ -7,14 +7,12 @@ import Filters from "../Filters";
 function App() {
   const { data: fetchedData = [] } = useFetchData();
 
-  const [data, setData] = useState(fetchedData);
-
   const [filters, setFilters] = useState({
-    roles: [],
+    jobRole: [],
     numberOfEmployees: [],
-    experience: [],
-    remote: [],
-    basePay: [],
+    minExp: [],
+    location: [],
+    minJdSalary: [],
     companyName: "",
   });
 

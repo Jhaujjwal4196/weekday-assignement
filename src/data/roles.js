@@ -33,7 +33,7 @@ export const MiniumExperince = [
 export const Remote = [
   { label: "Remote", value: "remote" },
   { label: "Hybrid", value: "hybrid" },
-  { label: "In Office", value: "" },
+  { label: "In Office", value: "in office" },
 ];
 
 export const MinBasePay = [

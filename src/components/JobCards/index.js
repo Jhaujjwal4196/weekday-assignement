@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import { GiSandsOfTime } from "react-icons/gi";
+import { filterJobs } from "@/utils/filterJobs";
 
 const currencyMapping = {
   USD: "$",
@@ -19,12 +20,13 @@ const capitalizeFirstWord = (str) =>
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
-function JobCards({ data: fetchedData = [] }) {
+function JobCards({ data: fetchedData = [], filters }) {
   const [data, setData] = useState(fetchedData);
 
   useEffect(() => {
-    setData(fetchedData);
-  }, [fetchedData]);
+    if (filters) setData(filterJobs(fetchedData, filters));
+    else setData(fetchedData);
+  }, [filters, fetchedData]);
 
   return (
     <div className={styles.card_container}>
