@@ -3,32 +3,38 @@ import styles from "./styles.module.css";
 import React from "react";
 import Select from "../Select";
 
-function Filters({}) {
-  const Exp = [...Array(10).keys()].map((it) => ({
-    label: `${(it + 1) * 10}L`,
-    value: (it + 1) * 10,
-  }));
-
-  console.log({ Exp });
-
+function Filters({ filters = {}, setFilters }) {
   const FILTER_BUCKETS = [
-    { label: "Roles", value: Roles, multiple: true },
-    { label: "Minimum Experience", value: MiniumExperince, multiple: false },
-    { label: "Remote", value: Remote, multiple: true },
-    { label: "Minimum Base Pay", value: MinBasePay, multiple: false },
+    { label: "Roles", value: Roles, multiple: true, filterKey: "roles" },
+    {
+      label: "Minimum Experience",
+      value: MiniumExperince,
+      multiple: false,
+      filterKey: "experience",
+    },
+    { label: "Remote", value: Remote, multiple: true, filterKey: "remote" },
+    {
+      label: "Minimum Base Pay",
+      value: MinBasePay,
+      multiple: false,
+      filterKey: "basePay",
+    },
   ];
 
   return (
     <div>
       <div>Filters</div>
       <div className={styles.filter_wrapper}>
-        {FILTER_BUCKETS.map(({ label = "", value, multiple }) => {
+        {FILTER_BUCKETS.map(({ label = "", value, multiple, filterKey }) => {
           return (
             <Select
               key={label}
               placeholder={label}
               options={value}
               multiple={multiple}
+              filterKey={filterKey}
+              filters={filters}
+              setFilters={setFilters}
             />
           );
         })}

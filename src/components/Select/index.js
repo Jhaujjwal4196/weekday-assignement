@@ -9,6 +9,9 @@ export default function Select({
   multiple = false,
   placeholder = "Select",
   options = [],
+  filterKey = "",
+  filters = {},
+  setFilters = () => {},
 }) {
   const [selectedState, setSelected] = useState([]);
   const [inputVal, setInputVal] = useState("");
@@ -65,6 +68,12 @@ export default function Select({
       });
     }
   };
+
+  useEffect(() => {
+    setFilters((prevFilters) => {
+      return { ...prevFilters, [filterKey]: selectedState };
+    });
+  }, [selectedState, filterKey, setFilters]);
 
   useEffect(() => {
     callBack();

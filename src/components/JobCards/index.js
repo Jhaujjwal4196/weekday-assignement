@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import { GiSandsOfTime } from "react-icons/gi";
@@ -19,7 +20,6 @@ const capitalizeFirstWord = (str) =>
     .join(" ");
 
 function JobCards({ data: fetchedData = [] }) {
-  console.log({ fetchedData });
   const [data, setData] = useState(fetchedData);
 
   useEffect(() => {

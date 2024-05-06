@@ -31,7 +31,6 @@ const useFetchData = () => {
             (newItem) =>
               !prevData.some((oldItem) => oldItem.jdUid === newItem.jdUid)
           );
-          console.log({ newData });
           return [...prevData, ...newData];
         });
       } catch (error) {
