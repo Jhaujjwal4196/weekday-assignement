@@ -1,0 +1,147 @@
+.main_container {
+  margin: 20px 0px 0px 20px;
+  height: 100%;
+}
+
+.card_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.card_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 20px;
+  gap: 12px;
+  border-radius: 20px;
+  min-height: 100%;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  overflow: hidden;
+  width: 32%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px 0px !important;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  font-size: 10px;
+  padding: 4px 6px;
+  box-shadow: rgba(6, 6, 6, 0.05) 0px 2px 6px 0px;
+  border-radius: 10px;
+  border: 1px solid rgb(230, 230, 230);
+}
+
+.logo_name {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+  color: #8b8b8b;
+}
+
+.salary_text {
+  color: rgb(77, 89, 106);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.role_description {
+  height: 200px;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.heading {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.view_job {
+  align-self: center;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  position: relative;
+  top: -18px;
+}
+
+.view_job a {
+  color: #4943da;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.box {
+  white-space: pre-wrap;
+  font-size: 14px;
+}
+
+.box > * {
+  white-space: pre-wrap;
+  font-size: 14px;
+}
+
+.skill_pill {
+  font-size: 9px !important;
+  font-weight: 500 !important;
+  color: #4943da;
+  background-color: #d9fed3;
+  padding: 2px 7px;
+  border-radius: 50px;
+}
+.skills_section {
+  margin-top: 4px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.easy_apply {
+  width: 100%;
+  background-color: rgb(85, 239, 196);
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 8px;
+  margin: 5px 0;
+  border: 0px;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 600px) {
+  .card_body {
+    width: 96%;
+  }
+}
+
+@media (width > 600px) {
+  .card_body {
+    width: 48%;
+  }
+}
+
+@media (width > 1000px) {
+  .card_body {
+    width: 32%;
+  }
+}
