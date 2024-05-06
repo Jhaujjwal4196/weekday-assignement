@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./styles.module.css";
 import useFetchData from "@/hooks/useFetchData";
 import JobCards from "../JobCards";

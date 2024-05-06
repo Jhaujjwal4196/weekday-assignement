@@ -42,6 +42,7 @@ function JobCards({ data: fetchedData = [], filters }) {
           maxJdSalary = 0,
           minJdSalary,
           salaryCurrencyCode,
+          jdLink,
           skills = [],
         }) => (
           <div key={jdUid} className={styles.card_body}>
@@ -92,7 +93,9 @@ function JobCards({ data: fetchedData = [], filters }) {
             </div>
 
             <div className={styles.view_job}>
-              <a>View Job</a>
+              <a href={jdLink} target="_blank">
+                View Job
+              </a>
             </div>
             {skills.length ? (
               <div>
@@ -113,7 +116,11 @@ function JobCards({ data: fetchedData = [], filters }) {
               </div>
             ) : null}
 
-            <button className={styles.easy_apply}>Easy Apply</button>
+            <button className={styles.easy_apply}>
+              <a href={jdLink} target="_blank">
+                Easy Apply
+              </a>
+            </button>
           </div>
         )
       )}

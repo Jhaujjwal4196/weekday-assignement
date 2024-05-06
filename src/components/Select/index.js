@@ -17,10 +17,6 @@ export default function Select({
   const [inputVal, setInputVal] = useState("");
   const [showOptions, setShowOptions] = useState(false);
 
-  const handleSubmit = (val) => {
-    console.log({ val });
-  };
-
   const filteredOptions = (options || []).filter(
     ({ value = "" }) =>
       String(value).toLowerCase().includes(inputVal.toLowerCase()) &&
@@ -99,7 +95,7 @@ export default function Select({
         >
           {placeholder}
         </div>
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form className={styles.form}>
           <div className={styles.component}>
             <button
               onClick={handleDropdownClick}

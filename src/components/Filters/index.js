@@ -4,27 +4,29 @@ import React from "react";
 import Select from "../Select";
 import Input from "../Input";
 
-function Filters({ filters = {}, setFilters }) {
-  const FILTER_BUCKETS = [
-    { label: "Roles", value: Roles, multiple: true, filterKey: "jobRole" },
-    {
-      label: "Minimum Experience",
-      value: MiniumExperince,
-      multiple: false,
-      filterKey: "minExp",
-    },
-    { label: "Remote", value: Remote, multiple: true, filterKey: "location" },
-    {
-      label: "Minimum Base Pay",
-      value: MinBasePay,
-      multiple: false,
-      filterKey: "minJdSalary",
-    },
-  ];
+const FILTER_BUCKETS = [
+  { label: "Roles", value: Roles, multiple: true, filterKey: "jobRole" },
+  {
+    label: "Minimum Experience",
+    value: MiniumExperince,
+    multiple: false,
+    filterKey: "minExp",
+  },
+  { label: "Remote", value: Remote, multiple: true, filterKey: "location" },
+  {
+    label: "Minimum Base Pay",
+    value: MinBasePay,
+    multiple: false,
+    filterKey: "minJdSalary",
+  },
+];
 
+function Filters({ filters = {}, setFilters }) {
   return (
     <div>
-      <div>Filters</div>
+      <div style={{ textAlign: "center", fontSize: "22px", fontWeight: "500" }}>
+        Search Jobs
+      </div>
       <div className={styles.filter_wrapper}>
         {FILTER_BUCKETS.map(({ label = "", value, multiple, filterKey }) => {
           return (

@@ -34,7 +34,7 @@ const useFetchData = () => {
           return [...prevData, ...newData];
         });
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
     fetchData();
